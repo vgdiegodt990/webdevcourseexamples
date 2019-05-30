@@ -1,0 +1,15 @@
+/* MAKES ICON LARGER */
+i.icon {
+    font-size:2em;
+}
+
+/* FIXES SPACING ERROR */
+    /* .main MAKES IT SO YOU DON'T HAVE TO WORRY IF THERE'S A DIV OR NAVBAR IN IT */
+.container.main{
+    margin-top:7em;
+}
+
+/* MAKES DELETE BUTTON INLINE */
+#delete {
+    display:inline;
+}

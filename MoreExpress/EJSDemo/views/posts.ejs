@@ -1,0 +1,35 @@
+<!-- PARTIAL --> 
+<% include partials/header %> 
+<!-- -->
+
+<!-- STYLING (not the optimial way) 
+<style>
+    body{
+        color:purple;   
+    }
+</style>
+-->
+
+<!-- BEST WAY OF DOING SO / EXTERNAL STYLE SHEET -->
+    <!-- YOU DO NOT HAVE TO DO "public/DemoEJSCSS.css B/C THERE IS A WAY TO TELL EJS TO GET STYLESHEETS FROM THERE -->
+<link rel="stylesheet" href="DemoEJSCSS.css">
+
+<h1>The Posts Page</h1>
+
+<!-- FOR METHOD -->
+<% for(var i = 0; i < posts.length; i++){ %>
+    <li> 
+        <%= posts[i].title %> - <strong><%= posts[i].author %></strong> 
+    </li>
+<% }; %>
+
+<!-- FOR EACH METHOD (much more common) -->
+<% posts.forEach(function(posts){ %>
+    <li>
+        <%= posts.title %> - <strong><%= posts.author %></strong> 
+    </li>
+<% }); %>
+
+<!-- PARTIAL -->
+<% include partials/footer %>
+<!-- -->

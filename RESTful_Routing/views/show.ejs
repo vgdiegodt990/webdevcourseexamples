@@ -1,0 +1,31 @@
+<!-- PARTIAL --> 
+<% include ./partials/header %> 
+<!-- -->
+
+<div class="ui main text container segment">
+    <div class="ui huge header"> <%= blog.title %> </div>
+    <div class="ui top attached">
+        <div class="item">
+            <img class="ui centered rounded image" src=" <%= blog.image %> ">
+        </div>
+        <div class="content">
+                <!-- .toDateString() MAKES THE DATE MUCH MORE READABLE -->
+            <span> <%= blog.created.toDateString() %> </span>
+        </div>
+        <div class="description">
+            <!-- DASH MAKES IT SO THAT WHATEVER CODE IS ENTERED IN THE DESCRIP., say a strong tag, WILL BE RUN -->
+                <!-- very dangerous do not do it -->
+                    <!-- there are packages that will allow it not to be run, however -->   
+                    <!-- package is called "express-sanitizer" -->
+            <p> <%- blog.body %> </p>    
+        </div>
+        <a class="ui blue basic button" href="/blogs/<%= blog._id %>/edit">Edit</a>
+        <form id="delete" action="/blogs/<%= blog._id %>?_method=DELETE" method="POST">
+            <button class="ui red basic button">Delete</button>
+        </form>
+    </div>
+</div>
+
+<!-- PARTIAL -->
+<% include ./partials/footer %>
+<!-- -->
